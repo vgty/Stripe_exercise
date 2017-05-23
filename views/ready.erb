@@ -1,0 +1,128 @@
+<div class="partial-result">
+    <div class="w-container">
+      <h1 class="ready title-results">Votre résultat est:</h1>
+      <h2 class="big-score ready" data-ix="new-interaction-7">Honorable !</h2><a class="know-answer" href="#pay">Obtenir<br>ma note</a><img class="arrow-down ready" src="images/download-1.svg" width="40">
+    </div>
+</div>
+<div class="density">
+  <div class="w-container">
+    <h2 class="title-s">Les occurences de votre texte</h2>
+    <h3 class="subheading-s">Les résultats partiels sont là !</h3>
+    <div class="density-r w-row">
+      <div class="w-col w-col-3 w-col-medium-6">
+        <h3 class="h2-density">2 mots</h3>
+        <div class="density-b">
+          <ul class="density-list ready w-list-unstyled" data-ix="scroll">
+            <%@density2_array.each do |e| %>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t"><%=e%> &nbsp;</div>
+                </div>
+              </li>
+            <%end%>
+            <li>
+              <div class="density-line w-clearfix">
+                <div class="density-t">This is &nbsp;</div>
+                <div class="density-n">3</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-col w-col-3 w-col-medium-6">
+        <h3 class="h2-density">3 mots</h3>
+        <div class="density-b">
+          <ul class="density-list ready w-list-unstyled">
+            <%@density3_array.each do |e| %>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t"><%=e%> &nbsp;</div>
+                </div>
+              </li>
+            <%end%>
+            <li>
+              <div class="density-line w-clearfix">
+                <div class="density-t">This is some&nbsp;</div>
+                <div class="density-n">9</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-col w-col-3 w-col-medium-6">
+        <h3 class="h2-density">4 mots</h3>
+        <div class="density-b">
+          <ul class="density-list ready w-list-unstyled">
+            <%@density4_array.each do |e| %>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t"><%=e%> &nbsp;</div>
+                </div>
+              </li>
+            <%end%>
+            <li>
+              <div class="density-line w-clearfix">
+                <div class="density-t">This is some text</div>
+                <div class="density-n">4</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-col w-col-3 w-col-medium-6">
+        <h3 class="h2-density">5 mots</h3>
+        <div class="density-b">
+          <ul class="density-list ready w-list-unstyled">
+            <%@density5_array.each do |e| %>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t"><%=e%> &nbsp;</div>
+                </div>
+              </li>
+            <%end%>
+            <li>
+              <div class="density-line w-clearfix">
+                <div class="density-t">This is some awesome text</div>
+                <div class="density-n">2</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3 class="disclaimer subheading-s w-hidden-small w-hidden-tiny">*Si vous avez des réponses étranges il se peut que le fichier soit endommagé ou alors qu'il ai subit des dommages lors d'une conversion. <br>Dans ce cas vérifiez que votre document ne comporte ni erreurs ni images</h3>
+  </div><a class="darker know-answer" href="#pay">Obtenir plus de résultats</a>
+</div>
+<div class="payment" id="pay">
+  <div class="payment-c w-container">
+    <h2 class="title-s">Obtenez tous vos résultats</h2>
+    <div class="payment-t">Pour le prix d'une baguette, obtenez tous vos résultats ainsi que votre score de richesse lexicale.</div>
+    <div class="payment-b">
+      <div class="price">0.99 €</div>
+      <ul>
+        <li class="li-results">Un score de la richesse de votre vocabulaire</li>
+        <li class="li-results">Une analyse complète des occurences</li>
+        <li class="li-results">Télécharger vos données</li>
+        <li class="li-results">Estimation du temps de lecture basée sur les statistiques nationales</li>
+        <li class="li-results">Nombre de mots différents
+          <br>(calcul &nbsp;adapté à la langue française)</li>
+        <li class="li-results">Nombre total de mots
+          <br>(calcul plus précis et mieux adapté que les outils en ligne)</li>
+      </ul>
+      <div class="stripe-button w-embed w-script">
+        <form action="/charge" method="post">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= settings.publishable_key %>"
+                  data-description="Ediscore"
+                  data-amount="99"
+                  data-currency="eur"
+                  data-label="Payer 0.99€"
+                  data-allow-remember-me="false"  
+                  data-locale="auto">
+          </script>
+        </form>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

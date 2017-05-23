@@ -1,0 +1,143 @@
+
+<div class="result-score">
+    <h1 class="title-results">Vos résultats</h1>
+    <div class="results-c w-container">
+      <div class="big-score-b w-clearfix" data-ix="fade-apear">
+        <div class="info-b w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction-2">
+          <div class="text-block-3 w-hidden-medium w-hidden-small w-hidden-tiny">i</div>
+        </div>
+        <div class="big-score-heading">Mots différents présents
+          <br> dans votre texte</div>
+        <h2 class="big-score number"><%=@unique%></h2>
+        <div class="info-text-1 w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction">
+          <div class="info-t">&nbsp;Ce nombre représente le "réservoir" de mots que vous avez utilisé afin d'écrire votre texte. Il prend également en compte des césures et les mots précédés d'une apostrophe. Ainsi, "l'arbre" et "arbre" sont considérés comme un même mot.</div>
+        </div>
+      </div>
+      <div class="big-score-b w-clearfix" data-ix="fade-apear">
+        <div class="info-b w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction-5">
+          <div class="text-block-3">i</div>
+        </div>
+        <div class="big-score-heading">Nombre de mots total présent
+          <br> dans votre texte</div>
+        <h2 class="big-score number"><%=@all_words%></h2>
+        <div class="info-text-2 w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction">
+          <div class="info-t">&nbsp;Ce nombre représente tous les mots que vous avez utilisés pour écrire votre texte. l'analyse prend également en compte les césures et chaque ensemble de mots séparés par un espace est comptabilisé</div>
+        </div>
+      </div>
+      <div class="big-score-b w-clearfix" data-ix="fade-apear">
+        <div class="info-b w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction-4">
+          <div class="text-block-3">i</div>
+        </div>
+        <div class="big-score-heading">Temps moyen de lecture</div>
+        <h2 class="big-score number"><%=@time_to_read%></h2>
+        <div class="info-text-3 w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction">
+          <div class="info-t">&nbsp;Ce nombre représente le "réservoir" de mots que vous avez utilisé afin d'écrire votre texte. Il prend également en compte des césures et les mots précédés d'une apostrophe. Ainsi, "l'arbre" et "arbre" sont considérés comme un même mot.</div>
+        </div>
+      </div>
+      <div class="big-score-b lexical-score-b w-clearfix" data-ix="fade-apear-2">
+        <div class="info-b w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction-3">
+          <div class="text-block-3">i</div>
+        </div>
+        <div class="big-score-heading">score lexical</div>
+        <h2 class="big-score lexical-score number"><%=@score%></h2>
+        <div class="info-text-4 w-hidden-medium w-hidden-small w-hidden-tiny" data-ix="new-interaction">
+          <div class="info-t">score lexical = (mots différents ÷ mots total) x 100
+            <br>Sur une base de 25 000 mots maximum. Cette limite s'impose pour mettre tous les textes sur la même échelle. Sinon un roman très long avec un vocabulaire riche obtiendrait quand même un score faible.</div>
+        </div>
+      </div><img class="arrow-down" src="images/download-1.svg" width="40">
+    </div>
+  </div>
+  <div class="density results">
+    <div class="final-results-c w-container">
+      <h2 class="title-s">Les occurences de votre texte</h2>
+      <h3 class="subheading-s">Vous pouvez faire défiler l'ensemble des résultats</h3>
+      <div class="density-r w-row">
+        <div class="w-col w-col-3 w-col-medium-6">
+          <h3 class="h2-density">2 mots</h3>
+          <div class="density-b">
+            <ul class="density-list w-list-unstyled" data-ix="scroll">
+              <%@density2_array.each do |e| %>
+                <li>
+                  <div class="density-line w-clearfix">
+                    <div class="density-t"><%=e%> &nbsp;</div>
+                  </div>
+                </li>
+              <%end%>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t">This is &nbsp;</div>
+                  <div class="density-n">3</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6">
+          <h3 class="h2-density">3 mots</h3>
+          <div class="density-b">
+            <ul class="density-list w-list-unstyled">
+              <%@density3_array.each do |e| %>
+                <li>
+                  <div class="density-line w-clearfix">
+                    <div class="density-t"><%=e%> &nbsp;</div>
+                  </div>
+                </li>
+              <%end%>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t">This is some&nbsp;</div>
+                  <div class="density-n">9</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6">
+          <h3 class="h2-density">4 mots</h3>
+          <div class="density-b">
+            <ul class="density-list w-list-unstyled">
+              <%@density4_array.each do |e| %>
+                <li>
+                  <div class="density-line w-clearfix">
+                    <div class="density-t"><%=e%> &nbsp;</div>
+                  </div>
+                </li>
+              <%end%>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t">This is some text</div>
+                  <div class="density-n">4</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6">
+          <h3 class="h2-density">5 mots</h3>
+          <div class="density-b">
+            <ul class="density-list w-list-unstyled">
+              <%@density5_array.each do |e| %>
+                <li>
+                  <div class="density-line w-clearfix">
+                    <div class="density-t"><%=e%> &nbsp;</div>
+                  </div>
+                </li>
+              <%end%>
+              <li>
+                <div class="density-line w-clearfix">
+                  <div class="density-t">This is some awesome text</div>
+                  <div class="density-n">2</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><a class="button download w-button" href="#">Enregistrez<br>vos résultats</a><img class="download-img" src="images/download.svg" width="30">
+    </div>
+  </div>
+  <div class="again send">
+    <div class="w-container">
+      <h2 class="title-s">Scannez un autre document</h2>
+      <h3 class="subheading-s">Comparer plusieurs de vos ouvrages. Observez votre évolution.</h3><a class="button w-button" href="#">Analysez<br> votre texte<br>.pdf .docx<br> .txt</a>
+    </div>
+  </div>

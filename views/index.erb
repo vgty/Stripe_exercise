@@ -1,13 +1,214 @@
-<form action="/charge" method="post" class="payment">
-    <article>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-      </label>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= settings.publishable_key %>"
-            data-description="A month's subscription"
-            data-amount="500"
-            data-locale="auto"></script>
-  </form>
+<div class="header">
+    <div class="heading-b">
+      <h1 class="heading">Le vocabulairE de votre manuscrit est-il riche ?</h1>
+      <h3 class="sub-heading">Étudiez la richesse lexicale de votre texte et comparez-le aux grandes œuvres et best-sellers</h3>
+    </div>
+  </div>
+  <div class="send">
+    <div class="w-container">
+      <h2 class="title-s">Scannez votre document</h2>
+      <h3 class="subheading-s">Ce processus est sécurisé et aucun document n'est conservé<br> après analyse.</h3>  
+      <form action='/upload' method='POST' enctype='multipart/form-data'>
+        <input type="file" name="document" class="inputfile" style="display:none;"/>
+        <div class="button" id="browse" for="file"><span class="input-text">Selectionnez<br> votre texte<br>.pdf .docx<br> .txt</span></div>
+        <input type='submit' value="LANCER L'ANALYSE !" class="button scan" style="display:none;">
+      </form>
+        <img src="/images/91.svg" alt="preloader" class="preloader">
+        <h3 class="disclaimer-time">L'examen peut prendre jusqu'à 30 secondes<br/>selon les livres.</h3>
+      <p class="alert">Le fichier présenté n'est pas au bon format.<br/> Vérifiez bien qu'il sagit d'un fichier .docx .pdf ou .txt s'il vous plait</p>
+    </div>
+    <h3 class="disclaimer subheading-s">*Si vous avez convertit votre document<br> assurez vous qu'il n'e comporte ni image<br> ni erreurs de conversion</h3>
+  </div>
+  <div class="density">
+    <div class="w-container">
+      <h2 class="title-s">Les occurences</h2>
+      <h3 class="subheading-s">Repérez les répétitions excessives<br> et tics de langage afin de varier<br>vos formulations.</h3>
+      <div class="density-r w-row">
+        <div class="w-col w-col-3 w-col-medium-6 w-col-tiny-tiny-stack">
+          <h3 class="h2-density">2 mots</h3>
+          <div class="density-b">
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is&nbsp;</div>
+              <div class="density-n">22</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is</div>
+              <div class="density-n">12</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is</div>
+              <div class="density-n">2</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is</div>
+              <div class="density-n">12</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is&nbsp;</div>
+              <div class="density-n">3</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is</div>
+              <div class="density-n">2</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is</div>
+              <div class="density-n">1</div>
+            </div>
+            <div class="etc-b">
+              <div class="etct">...</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6 w-col-tiny-tiny-stack">
+          <h3 class="h2-density">3 mots</h3>
+          <div class="density-b">
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="etc-b">
+              <div class="etct">...</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6 w-col-tiny-tiny-stack">
+          <h3 class="h2-density">4 mots</h3>
+          <div class="density-b">
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text&nbsp;</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="etc-b">
+              <div class="etct">...</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-3 w-col-medium-6 w-col-tiny-tiny-stack">
+          <h3 class="h2-density">5 mots</h3>
+          <div class="density-b">
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">2</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="density-line w-clearfix">
+              <div class="density-t">This is some text ins</div>
+              <div class="density-n">tex</div>
+            </div>
+            <div class="etc-b">
+              <div class="etct">...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="disclaimer subheading-s">*Les résultats sont partiels dans la version gratuite<br> puis 0.99€ pour l'ensemble des résultats</h3>
+  </div>
+  <div class="score-explanation">
+    <div class="score-explanation-c w-container">
+      <h2 class="title-s">Le score lexical</h2>
+      <h3 class="subheading-s">Obtenez votre score de richesse lexicale<br>et comparez-vous aux oeuvres les plus connues.</h3>
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <div class="image-b"><img class="image" src="images/10.png" width="256">
+            <div class="lexical-results-b">
+              <div class="w-row">
+                <div class="w-clearfix w-col w-col-3 w-col-tiny-6">
+                  <div class="score-b">
+                    <div>
+                      <div class="text-block">32</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-clearfix w-col w-col-9 w-col-tiny-6">
+                  <div class="different-words-book">18 859
+                    <br><span class="text-span"><span xmlns="http://www.w3.org/1999/xhtml" class="different-s">mots différents</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-6">
+          <h3 class="lexical-why">Pourquoi un score ?</h3>
+          <p class="paragraph right">Les mots sont à l'écrivain ceux que les couleurs sont au peintre. Des chefs-d'œuvres sont réalisés juste avec des couleurs primaires et de la même façon, des livres ont changés le monde avec des mots simples. Autrement dit, un vocabulaire riche n'est évidemment pas forcément un gage de qualité et chaque lexique vise un lectorat bien précis. remarquera tout de même que les oeuvres classiques atteignent des scores plus élevés que nos écrits contemporains. Mais ne serait-ce pas intéressant de mesurer &nbsp;l'étendue lexicale de votre roman et de le comparer à un récit similaire ayant fait ses preuves ? Nous avons créé une section attribuant un score aux 100 best-sellers de tous les temps tous genres confondus. Ce score peut également donné un indice quand à l'adéquation entre le vocabulaire d'un livre et son lectorat.
+            <br>
+            <br>Nos algorithmes sont finement élaborés en s'adaptant aux particularités de la langue française et se révèlent plus précis que les principaux outils disponibles en ligne.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="again send">
+    <div class="w-container">
+      <h2 class="title-s">Et vous, quel est votre score ?</h2>
+      <h3 class="subheading-s">Analysez votre livre! Ce processus<br> est sécurisé et aucun document<br> n'est conservé après analyse.</h3><a class="button w-button" href="ready.html">Analysez<br> votre texte<br>.pdf .docx<br> .txt</a>
+    </div>
+  </div>

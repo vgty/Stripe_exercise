@@ -1,0 +1,53 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    byebug (9.0.6)
+    coderay (1.1.1)
+    docx (0.2.07)
+      nokogiri (~> 1.5)
+      rubyzip (~> 1.1.6)
+    dotenv (2.2.1)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
+    method_source (0.8.2)
+    mini_portile2 (2.1.0)
+    multipart-post (2.0.0)
+    mustermann (1.0.0)
+    nokogiri (1.7.2)
+      mini_portile2 (~> 2.1.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    rack (2.0.2)
+    rack-protection (2.0.0)
+      rack
+    rubyzip (1.1.7)
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
+    slop (3.6.0)
+    stripe (2.8.0)
+      faraday (~> 0.9)
+    tilt (2.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  docx (~> 0.2.07)
+  dotenv
+  pry-byebug
+  sinatra
+  stripe
+
+RUBY VERSION
+   ruby 2.4.0p0
+
+BUNDLED WITH
+   1.14.6
